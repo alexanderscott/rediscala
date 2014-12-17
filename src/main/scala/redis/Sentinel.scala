@@ -58,7 +58,8 @@ case class SentinelClient(var host: String = "localhost",
         }
       }
       case _ => {
-        log.warning(s"SentinelClient.onMessage: unexpected message received: $message")
+        if (log.isDebugEnabled)
+          log.debug(s"SentinelClient.onMessage: unexpected message received: $message")
       }
     }
   }

@@ -30,7 +30,7 @@ abstract class RedisWorkerIO(val address: InetSocketAddress) extends Actor with 
     if (tcpWorker != null) {
       tcpWorker ! Close
     }
-    log.info(s"Connect to $currAddress")
+    log.debug(s"Connect to $currAddress")
     // Create a new InetSocketAddress to clear the cached IP address.
     currAddress = new InetSocketAddress(currAddress.getHostName, currAddress.getPort)
     tcp ! Connect(currAddress, options = SO.KeepAlive(on = true) :: Nil)
@@ -42,7 +42,7 @@ abstract class RedisWorkerIO(val address: InetSocketAddress) extends Actor with 
   }
 
   override def postStop() {
-    log.info("RedisWorkerIO stop")
+    log.debug("RedisWorkerIO stop")
   }
 
   def initConnectedBuffer() {
@@ -65,11 +65,11 @@ abstract class RedisWorkerIO(val address: InetSocketAddress) extends Actor with 
     initConnectedBuffer()
     tryInitialWrite() // TODO write something in head buffer
     become(connected)
-    log.info("Connected to " + cmd.remoteAddress)
+    log.debug("Connected to " + cmd.remoteAddress)
   }
 
   def onConnectingCommandFailed(cmdFailed: CommandFailed) = {
-    log.error(cmdFailed.toString)
+    log.debug(cmdFailed.toString)
     scheduleReconnect()
   }
 
@@ -94,14 +94,14 @@ abstract class RedisWorkerIO(val address: InetSocketAddress) extends Actor with 
   }
 
   def onAddressChanged(addr: InetSocketAddress) {
-    log.info(s"Address change [old=$address, new=$addr]")
+    log.debug(s"Address change [old=$address, new=$addr]")
     tcpWorker ! ConfirmedClose // close the sending direction of the connection (TCP FIN)
     currAddress = addr
     scheduleReconnect()
   }
 
   def onConnectionClosed(c: ConnectionClosed) = {
-    log.warning(s"ConnectionClosed $c")
+    log.debug(s"ConnectionClosed $c")
     scheduleReconnect()
   }
 
@@ -109,13 +109,13 @@ abstract class RedisWorkerIO(val address: InetSocketAddress) extends Actor with 
     * Maybe to much data in the Command ?
     */
   def onConnectedCommandFailed(commandFailed: CommandFailed) = {
-    log.error(commandFailed.toString) // O/S buffer was full
+    log.debug(commandFailed.toString) // O/S buffer was full
     tcpWorker ! commandFailed.cmd
   }
 
   def scheduleReconnect() {
     cleanState()
-    log.info(s"Trying to reconnect in $reconnectDuration")
+    log.debug(s"Trying to reconnect in $reconnectDuration")
     this.context.system.scheduler.scheduleOnce(reconnectDuration, self, Reconnect)
     become(receive)
   }
