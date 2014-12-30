@@ -5,8 +5,8 @@ after_script:
 scala:
   - "2.10.4"
 jdk:
-  - oraclejdk7
-  - openjdk7
+  - oraclejdk8
+  - openjdk8
 services:
   - redis
 env:

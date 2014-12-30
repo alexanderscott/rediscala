@@ -37,22 +37,22 @@ object Dependencies {
 }
 
 object RediscalaBuild extends Build {
-  val baseSourceUrl = "https://github.com/etaty/rediscala/tree/"
+  val baseSourceUrl = "https://github.com/alexanderscott/rediscala/tree/"
 
-  val v = "1.4.2"
+  val v = "1.4.3"
 
   lazy val standardSettings = Defaults.defaultSettings ++
     Seq(
       name := "rediscala",
       version := v,
-      organization := "com.etaty.rediscala",
+      organization := "com.crunchdevelopment",
       scalaVersion := "2.10.4",
       crossScalaVersions := Seq("2.11.2", "2.10.4"),
       licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html")),
       resolvers ++= Resolvers.resolversList,
 
       publishMavenStyle := true,
-      git.gitRemoteRepo := "git@github.com:etaty/rediscala.git",
+      git.gitRemoteRepo := "git@github.com:alexanderscott/rediscala.git",
 
       scalacOptions ++= Seq(
         "-encoding", "UTF-8",
@@ -69,7 +69,7 @@ object RediscalaBuild extends Build {
         )
       },
       autoAPIMappings := true,
-      apiURL := Some(url("http://etaty.github.io/rediscala/")),
+      apiURL := Some(url("http://alexanderscott.github.io/rediscala/")),
       scalacOptions in (Compile, doc) <++= version in LocalProject("rediscala") map { version =>
         val branch = if(version.trim.endsWith("SNAPSHOT")) "master" else version
         Seq[String](
@@ -77,7 +77,9 @@ object RediscalaBuild extends Build {
         )
       }
   ) ++ site.settings ++ site.includeScaladoc(v +"/api") ++ site.includeScaladoc("latest/api") ++ ghpages.settings ++
-    bintray.Plugin.bintrayPublishSettings
+    bintray.Plugin.bintrayPublishSettings ++ Seq(
+      bintray.Keys.bintrayOrganization in bintray.Keys.bintray := Some("crunchdevelopment"))
+
 
   lazy val BenchTest = config("bench") extend Test
 
