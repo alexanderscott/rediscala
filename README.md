@@ -1,4 +1,4 @@
-rediscala [![Build Status](https://travis-ci.org/etaty/rediscala.png)](https://travis-ci.org/etaty/rediscala) [![Coverage Status](https://img.shields.io/coveralls/etaty/rediscala.svg)](https://coveralls.io/r/etaty/rediscala?branch=master)[ ![Download](https://api.bintray.com/packages/etaty/maven/rediscala/images/download.svg) ](https://bintray.com/etaty/maven/rediscala/_latestVersion)
+rediscala [![Build Status](https://travis-ci.org/alexanderscott/rediscala.png)](https://travis-ci.org/alexanderscott/rediscala) [![Coverage Status](https://img.shields.io/coveralls/alexanderscott/rediscala.svg)](https://coveralls.io/r/alexanderscott/rediscala?branch=master)[ ![Download](https://api.bintray.com/packages/alexanderscott/maven/rediscala/images/download.svg) ](https://bintray.com/alexanderscott/maven/rediscala/_latestVersion)
 =========
 
 A [Redis](http://redis.io/) client for Scala (2.10+) and (AKKA 2.2+) with non-blocking and asynchronous I/O operations.
@@ -17,13 +17,13 @@ If you use SBT, you just have to edit `build.sbt` and add the following:
 From version 1.3.1: 
  * use akka 2.3
  * released for scala 2.10 & 2.11
- * use Bintray repo: https://bintray.com/etaty/maven/rediscala/view/general
+ * use Bintray repo: https://bintray.com/alexanderscott/maven/rediscala/view/general
 
 ```scala
-resolvers += "rediscala" at "http://dl.bintray.com/etaty/maven"
+resolvers += "rediscala" at "http://dl.bintray.com/alexanderscott/maven"
 
 libraryDependencies ++= Seq(
-  "com.etaty.rediscala" %% "rediscala" % "1.4.0"
+  "com.alexanderscott.rediscala" %% "rediscala" % "1.4.0"
 )
 ```
 
@@ -32,10 +32,10 @@ For older rediscala versions (<= 1.3):
  * released for scala 2.10 only
  * use github "repo"
 ```scala
-resolvers += "rediscala" at "https://raw.github.com/etaty/rediscala-mvn/master/releases/"
+resolvers += "rediscala" at "https://raw.github.com/alexanderscott/rediscala-mvn/master/releases/"
 
 libraryDependencies ++= Seq(
-  "com.etaty.rediscala" %% "rediscala" % "1.3"
+  "com.alexanderscott.rediscala" %% "rediscala" % "1.3"
 )
 ```
 
@@ -65,32 +65,32 @@ object Main extends App {
 
 ### Basic Example
 
-https://github.com/etaty/rediscala-demo
+https://github.com/alexanderscott/rediscala-demo
 
-You can fork with : `git clone git@github.com:etaty/rediscala-demo.git` then run it, with `sbt run`
+You can fork with : `git clone git@github.com:alexanderscott/rediscala-demo.git` then run it, with `sbt run`
 
 
 ### Redis Commands
 
 All commands are supported :
-* [Keys](http://redis.io/commands#generic) ([scaladoc](http://etaty.github.io/rediscala/latest/api/index.html#redis.commands.Keys))
-* [Strings](http://redis.io/commands#string) ([scaladoc](http://etaty.github.io/rediscala/latest/api/index.html#redis.commands.Strings))
-* [Hashes](http://redis.io/commands#hash) ([scaladoc](http://etaty.github.io/rediscala/latest/api/index.html#redis.commands.Hashes))
+* [Keys](http://redis.io/commands#generic) ([scaladoc](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.commands.Keys))
+* [Strings](http://redis.io/commands#string) ([scaladoc](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.commands.Strings))
+* [Hashes](http://redis.io/commands#hash) ([scaladoc](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.commands.Hashes))
 * [Lists](http://redis.io/commands#list) 
-  * non-blocking ([scaladoc](http://etaty.github.io/rediscala/latest/api/index.html#redis.commands.Lists))
-  * blocking ([scaladoc](http://etaty.github.io/rediscala/latest/api/index.html#redis.commands.BLists))
-* [Sets](http://redis.io/commands#set) ([scaladoc](http://etaty.github.io/rediscala/latest/api/index.html#redis.commands.Sets))
-* [Sorted Sets](http://redis.io/commands#sorted_set) ([scaladoc](http://etaty.github.io/rediscala/latest/api/index.html#redis.commands.SortedSets))
-* [Pub/Sub](http://redis.io/commands#pubsub) ([scaladoc](http://etaty.github.io/rediscala/latest/api/index.html#redis.commands.Publish))
-* [Transactions](http://redis.io/commands#transactions) ([scaladoc](http://etaty.github.io/rediscala/latest/api/index.html#redis.commands.Transactions))
-* [Connection](http://redis.io/commands#connection) ([scaladoc](http://etaty.github.io/rediscala/latest/api/index.html#redis.commands.Connection))
-* [Scripting](http://redis.io/commands#scripting) ([scaladoc](http://etaty.github.io/rediscala/latest/api/index.html#redis.commands.Scripting))
-* [Server](http://redis.io/commands#server) ([scaladoc](http://etaty.github.io/rediscala/latest/api/index.html#redis.commands.Server))
+  * non-blocking ([scaladoc](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.commands.Lists))
+  * blocking ([scaladoc](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.commands.BLists))
+* [Sets](http://redis.io/commands#set) ([scaladoc](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.commands.Sets))
+* [Sorted Sets](http://redis.io/commands#sorted_set) ([scaladoc](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.commands.SortedSets))
+* [Pub/Sub](http://redis.io/commands#pubsub) ([scaladoc](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.commands.Publish))
+* [Transactions](http://redis.io/commands#transactions) ([scaladoc](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.commands.Transactions))
+* [Connection](http://redis.io/commands#connection) ([scaladoc](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.commands.Connection))
+* [Scripting](http://redis.io/commands#scripting) ([scaladoc](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.commands.Scripting))
+* [Server](http://redis.io/commands#server) ([scaladoc](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.commands.Server))
 
 
 ### Blocking commands
 
-[RedisBlockingClient](http://etaty.github.io/rediscala/latest/api/index.html#redis.RedisBlockingClient) is the instance allowing access to blocking commands :
+[RedisBlockingClient](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.RedisBlockingClient) is the instance allowing access to blocking commands :
 * blpop
 * brpop
 * brpopplush
@@ -102,15 +102,15 @@ All commands are supported :
     })
   })
 ```
-Full example: [ExampleRediscalaBlocking](https://github.com/etaty/rediscala-demo/blob/master/src/main/scala/ExampleRediscalaBlocking.scala)
+Full example: [ExampleRediscalaBlocking](https://github.com/alexanderscott/rediscala-demo/blob/master/src/main/scala/ExampleRediscalaBlocking.scala)
 
-You can fork with: `git clone git@github.com:etaty/rediscala-demo.git` then run it, with `sbt run`
+You can fork with: `git clone git@github.com:alexanderscott/rediscala-demo.git` then run it, with `sbt run`
 
 
 ### Transactions
 
 The idea behind transactions in Rediscala is to start a transaction outside of a redis connection.
-We use the [TransactionBuilder](http://etaty.github.io/rediscala/latest/api/index.html#redis.commands.TransactionBuilder) to store call to redis commands (and for each command we give back a future).
+We use the [TransactionBuilder](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.commands.TransactionBuilder) to store call to redis commands (and for each command we give back a future).
 When `exec` is called, `TransactionBuilder` will build and send all the commands together to the server. Then the futures will be completed.
 By doing that we can use a normal connection with pipelining, and avoiding to trap a command from outside, in the transaction...
 
@@ -123,16 +123,16 @@ By doing that we can use a normal connection with pipelining, and avoiding to tr
   redisTransaction.exec()
 ```
 
-Full example: [ExampleTransaction](https://github.com/etaty/rediscala-demo/blob/master/src/main/scala/ExampleTransaction.scala)
+Full example: [ExampleTransaction](https://github.com/alexanderscott/rediscala-demo/blob/master/src/main/scala/ExampleTransaction.scala)
 
-You can fork with : `git clone git@github.com:etaty/rediscala-demo.git` then run it, with `sbt run`
+You can fork with : `git clone git@github.com:alexanderscott/rediscala-demo.git` then run it, with `sbt run`
 
-[TransactionsSpec](https://github.com/etaty/rediscala/blob/master/src/test/scala/redis/commands/TransactionsSpec.scala) will reveal even more gems of the API.
+[TransactionsSpec](https://github.com/alexanderscott/rediscala/blob/master/src/test/scala/redis/commands/TransactionsSpec.scala) will reveal even more gems of the API.
 
 ### Pub/Sub
 
-You can use a case class with callbacks [RedisPubSub](http://etaty.github.io/rediscala/latest/api/index.html#redis.RedisPubSub)
-or extend the actor [RedisSubscriberActor](http://etaty.github.io/rediscala/latest/api/index.html#redis.actors.RedisSubscriberActor) as shown in the example below
+You can use a case class with callbacks [RedisPubSub](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.RedisPubSub)
+or extend the actor [RedisSubscriberActor](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.actors.RedisSubscriberActor) as shown in the example below
 
 ```scala
 object ExamplePubSub extends App {
@@ -166,11 +166,11 @@ class SubscribeActor(channels: Seq[String] = Nil, patterns: Seq[String] = Nil) e
 }
 ```
 
-Full example: [ExamplePubSub](https://github.com/etaty/rediscala-demo/blob/master/src/main/scala/ExamplePubSub.scala)
+Full example: [ExamplePubSub](https://github.com/alexanderscott/rediscala-demo/blob/master/src/main/scala/ExamplePubSub.scala)
 
-You can fork with : `git clone git@github.com:etaty/rediscala-demo.git` then run it, with `sbt run`
+You can fork with : `git clone git@github.com:alexanderscott/rediscala-demo.git` then run it, with `sbt run`
 
-[RedisPubSubSpec](https://github.com/etaty/rediscala/blob/master/src/test/scala/redis/RedisPubSubSpec.scala.scala) will reveal even more gems of the API.
+[RedisPubSubSpec](https://github.com/alexanderscott/rediscala/blob/master/src/test/scala/redis/RedisPubSubSpec.scala.scala) will reveal even more gems of the API.
 
 ### Scripting
 
@@ -188,32 +188,32 @@ You can use it with `evalshaOrEval` which run your script even if it wasn't alre
   Await.result(r, 5 seconds)
 ```
 
-Full example: [ExampleScripting](https://github.com/etaty/rediscala-demo/blob/master/src/main/scala/ExampleScripting.scala)
+Full example: [ExampleScripting](https://github.com/alexanderscott/rediscala-demo/blob/master/src/main/scala/ExampleScripting.scala)
 
 ### Redis Sentinel
 
-[SentinelClient](http://etaty.github.io/rediscala/latest/api/index.html#redis.SentinelClient) connect to a redis sentinel server.
+[SentinelClient](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.SentinelClient) connect to a redis sentinel server.
 
-[SentinelMonitoredRedisClient](http://etaty.github.io/rediscala/latest/api/index.html#redis.SentinelMonitoredRedisClient) connect to a sentinel server to find the master addresse then start a connection. In case the master change your RedisClient connection will automatically connect to the new master server.
-If you are using a blocking client, you can use [SentinelMonitoredRedisBlockingClient](http://etaty.github.io/rediscala/latest/api/index.html#redis.SentinelMonitoredRedisBlockingClient)
+[SentinelMonitoredRedisClient](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.SentinelMonitoredRedisClient) connect to a sentinel server to find the master addresse then start a connection. In case the master change your RedisClient connection will automatically connect to the new master server.
+If you are using a blocking client, you can use [SentinelMonitoredRedisBlockingClient](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.SentinelMonitoredRedisBlockingClient)
 
 ### Pool
 
-[RedisClientPool](http://etaty.github.io/rediscala/latest/api/index.html#redis.RedisClientPool) connect to a pool of redis servers.
+[RedisClientPool](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.RedisClientPool) connect to a pool of redis servers.
 Redis commands are dispatched to redis connection in a round robin way.
 
 ### Master Slave
 
-[RedisClientMasterSlaves](http://etaty.github.io/rediscala/latest/api/index.html#redis.RedisClientMasterSlaves) connect to a master and a pool of slaves.
-The `write` commands are sent to the master, while the read commands are sent to the slaves in the [RedisClientPool](http://etaty.github.io/rediscala/latest/api/index.html#redis.RedisClientPool)
+[RedisClientMasterSlaves](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.RedisClientMasterSlaves) connect to a master and a pool of slaves.
+The `write` commands are sent to the master, while the read commands are sent to the slaves in the [RedisClientPool](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.RedisClientPool)
 
 ### ByteStringSerializer ByteStringDeserializer ByteStringFormatter
 
-[ByteStringSerializer](http://etaty.github.io/rediscala/latest/api/index.html#redis.ByteStringSerializer)
+[ByteStringSerializer](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.ByteStringSerializer)
 
-[ByteStringDeserializer](http://etaty.github.io/rediscala/latest/api/index.html#redis.ByteStringDeserializer)
+[ByteStringDeserializer](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.ByteStringDeserializer)
 
-[ByteStringFormatter](http://etaty.github.io/rediscala/latest/api/index.html#redis.ByteStringFormatter)
+[ByteStringFormatter](http://alexanderscott.github.io/rediscala/latest/api/index.html#redis.ByteStringFormatter)
 
 ```scala
 case class DumbClass(s1: String, s2: String)
@@ -244,31 +244,31 @@ object DumbClass {
   }
 ```
 
-Full example: [ExampleByteStringFormatter](https://github.com/etaty/rediscala-demo/blob/master/src/main/scala/ExampleByteStringFormatter.scala)
+Full example: [ExampleByteStringFormatter](https://github.com/alexanderscott/rediscala-demo/blob/master/src/main/scala/ExampleByteStringFormatter.scala)
 
 ### Scaladoc
-[Rediscala scaladoc API (latest version 1.4)](http://etaty.github.io/rediscala/latest/api/index.html#package)
+[Rediscala scaladoc API (latest version 1.4)](http://alexanderscott.github.io/rediscala/latest/api/index.html#package)
 
-[Rediscala scaladoc API (version 1.3)](http://etaty.github.io/rediscala/1.3/api/index.html#package)
+[Rediscala scaladoc API (version 1.3)](http://alexanderscott.github.io/rediscala/1.3/api/index.html#package)
 
-[Rediscala scaladoc API (version 1.2)](http://etaty.github.io/rediscala/1.2/api/index.html#package)
+[Rediscala scaladoc API (version 1.2)](http://alexanderscott.github.io/rediscala/1.2/api/index.html#package)
 
-[Rediscala scaladoc API (version 1.1)](http://etaty.github.io/rediscala/1.1/api/index.html#package)
+[Rediscala scaladoc API (version 1.1)](http://alexanderscott.github.io/rediscala/1.1/api/index.html#package)
 
-[Rediscala scaladoc API (version 1.0)](http://etaty.github.io/rediscala/1.0/api/index.html#package)
+[Rediscala scaladoc API (version 1.0)](http://alexanderscott.github.io/rediscala/1.0/api/index.html#package)
 
 ### Performance
 
 More than 250 000 requests/second
 
 * [benchmark result from scalameter](http://bit.ly/rediscalabench-1-1)
-* [sources directory](https://github.com/etaty/rediscala/tree/master/src/benchmark/scala/redis/bench)
+* [sources directory](https://github.com/alexanderscott/rediscala/tree/master/src/benchmark/scala/redis/bench)
 
 The hardware used is a macbook retina (Intel Core i7, 2.6 GHz, 4 cores, 8 threads, 8GB) running the sun/oracle jvm 1.6
 
 You can run the bench with :
 
-1. clone the repo `git clone git@github.com:etaty/rediscala.git`
+1. clone the repo `git clone git@github.com:alexanderscott/rediscala.git`
 2. run `sbt bench:test`
 3. open the bench report `rediscala/tmp/report/index.html`
 
