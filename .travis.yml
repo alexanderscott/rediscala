@@ -15,6 +15,6 @@ services:
 env:
   - SBT_OPTS="-XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M"
 # whitelist
-branches:
-  only:
-    - master
+#branches:
+#  only:
+#    - master
