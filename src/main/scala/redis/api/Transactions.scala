@@ -20,3 +20,8 @@ case class Watch(keys: Set[String]) extends RedisCommandStatusBoolean {
   val isMasterOnly = true
   val encodedRequest: ByteString = encode("WATCH", keys.map(ByteString.apply).toSeq)
 }
+
+case class Unwatch() extends RedisCommandStatusBoolean {
+  val isMasterOnly = true
+  val encodedRequest: ByteString = encode("UNWATCH")
+}

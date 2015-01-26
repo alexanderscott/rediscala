@@ -17,6 +17,7 @@ trait RedisCommands
   with Lists
   with Sets
   with SortedSets
+  with HyperLogLog
   with Publish
   with Scripting
   with Connection
